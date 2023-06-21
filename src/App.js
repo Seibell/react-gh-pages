@@ -1,32 +1,24 @@
-import { React, useState } from 'react'
- 
-export default function App() {
-  const [counter, setCounter] = useState(0);
- 
-  //increase counter
-  const increase = () => {
-    setCounter(count => count + 1);
-  };
- 
-  //decrease counter
-  const decrease = () => {
-    setCounter(count => count - 1);
-  };
- 
-  //reset counter 
-  const reset = () =>{
-    setCounter(0)
-  }
- 
+import React from 'react';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { NavBar } from "./components/NavBar";
+import { Banner } from "./components/Banner";
+import { Skills } from "./components/Skills";
+import { Projects } from "./components/Projects";
+import { Contact } from "./components/Contact";
+import { Footer } from "./components/Footer";
+
+function App() {
   return (
-    <div className="counter">
-      <h1>React Counter</h1>
-      <span className="counter__output">{counter}</span>
-      <div className="btn__container">
-        <button className="control__btn" onClick={increase}>+</button>
-        <button className="control__btn" onClick={decrease}>-</button>
-        <button className="reset" onClick={reset}>Reset</button>
-      </div>
+    <div className="App">
+      <NavBar />
+      <Banner />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
-  );
+  )
 }
+
+export default App;
